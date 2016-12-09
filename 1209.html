@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            box-sizing: border-box;
+            width: 600px;
+            height: 200px;
+            background-color: #aaa;
+            /* 解決box一起掉下來方法1*/
+            /*border: 1px solid;*/
+            overflow: hidden;
+            /* 解決box一起掉下來方法2*/
+            /*padding-top: 100px;*/
+            
+        }
+        .box h1{
+            margin-top: 100px;
+        }
+    
+    </style>
+    
+</head>
+<body>
+   <div class="box">
+       <h1>我是標題一</h1>
+    </div> 
+</body>
+</html>

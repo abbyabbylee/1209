@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*先聯結外部字體*/
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+        @import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+        /*米字選取器是萬用就是整個網頁都要遵守 */
+        /*font-family字體要先放英文在放中文 */
+        *{
+            box-sizing: border-box;
+            font-family: "Rotobo","Noto Sans Tc","sans-serif"
+        }
+    /*css reset(CSS有預設值的一切歸零)可上網抓別人的複製過來    */
+        /*如果要設UL/OL/LI等也可以只是這邊先不設比較方便*/
+        body,h1,h2,h3,h4,h5,h6{
+            margin: 0;
+            padding: 0;
+        }
+        /*強迫圖為滿版*/
+        img{
+            width: 100%;
+            vertical-align: top;
+        /*因為IE會有邊框所以先強制為0*/
+            border: 0;
+        }
+        /*先解決會浮動問題        */
+        .clearfix::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        /*強迫要滿版*/
+        .full-width{
+            width: 100%;
+        }
+        /*強迫要固定寬而且要置中*/
+        .fixed-width{
+            width: 1200px;
+            margin: auto;
+        }
+        /*三欄式區塊設定 */
+        .col-3{
+            float: left;
+        /*如果網頁寬是除不盡的可以打成width:calc(1100px/3);*/
+            width: 380px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        /*四欄式區塊設定 */
+        .col-4{
+            float: left;
+            width: 280px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        /*用一個固定位置 */
+        /*fixed是用來固定出現在網頁的如果網頁不用這樣可以不用設這個*/
+        nav{
+            position: fixed;
+        }
+        /*LOGO設定 */
+        nav .logo{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: #cfa0e0;
+        }
+        /*選單設定 */
+        nav .menu{
+            float: right;
+        }
+        /*先設定預設值為零 */
+        nav .menu ul{
+            margin: 0;
+            padding: 0;
+        }
+        /*每個選單排列以及點除掉設定 */
+        nav li   {
+            float: left;
+            list-style-type: none;
+        }
+        /*連結點要呈現的字的外部設定(大小/間距/字體顏色) */
+        nav a    {
+            display: block;
+            padding-left: 15px;
+            padding-right: 15px;
+            height: 100px;
+            line-height: 100px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px
+            
+        }
+        header{
+            background-image:url(http://lorempicsum.com/nemo/800/600/4);
+            background-size:cover;
+        /* height:600px;           */
+            padding-top: 250px;
+            padding-bottom: 250px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0;
+        }
+        header::before{
+            content: "";
+            display:inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        header .content {
+            color: aliceblue;
+            font-size: 30px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--先用最外邊包一個滿版不會受浮動影響  -->
+   <nav class="full-width clearfix">
+    
+    <div class="fixed-width ">
+        <div class="logo"></div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Journal</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+     </div>
+     </nav>
+     <header class="full-width">
+         <div class="content">
+            <h1>qwert</h1>
+            <p>poiuyttreferqggshkf</p>
+            <a href="#">more</a>             
+         </div>
+     </header>
+    
+    
+    <div style="height:150000px"></div>
+</body>
+</html>
